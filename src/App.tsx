@@ -53,11 +53,22 @@ export default function App() {
 
       <Footer />
       
+      {/* Sticky Marquee Footer */}
+      <div className="fixed bottom-0 w-full h-10 bg-brand-crimson z-[100] flex items-center overflow-hidden">
+        <div className="flex gap-12 whitespace-nowrap animate-marquee">
+          <span className="text-[10px] font-black uppercase tracking-widest text-white">DR PEPPER IS A ONE OF A KIND BLEND OF 23 FLAVORS</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/60">AVAILABLE AT MAJOR RETAILERS NEAR YOU</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white">TASTE THE REBELLION</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/60">ZERO SUGAR. MAXIMUM FLAVOR.</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white">STAY ORIGINAL</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/60">DR PEPPER IS A ONE OF A KIND BLEND OF 23 FLAVORS</span>
+        </div>
+      </div>
+
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-[-1]">
+        <div className="absolute inset-0 hero-gradient opacity-40" />
         <div className="absolute inset-0 bg-noise" />
-        <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-brand-red/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-brand-black to-transparent" />
       </div>
 
       {/* Bubble Particles (Global) */}

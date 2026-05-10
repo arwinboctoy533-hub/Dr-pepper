@@ -31,36 +31,23 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center lg:text-left"
         >
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block text-brand-crimson font-heading font-bold uppercase tracking-[0.3em] mb-6 text-sm"
-          >
-            One of a Kind. Since 1885.
-          </motion.span>
-          <h1 className="text-6xl md:text-8xl lg:text-[10vw] leading-[0.85] mb-8 text-glow">
-            THE FLAVOR <br />
-            <span className="text-brand-crimson">HITS DIFFERENT</span>
+          <div className="mb-4 flex items-center gap-2 text-brand-crimson font-bold text-xs uppercase tracking-[0.2em] justify-center lg:justify-start">
+            <span className="w-8 h-[1px] bg-brand-crimson"></span>
+            The 23 Flavor Symphony
+          </div>
+          <h1 className="text-7xl md:text-9xl lg:text-[120px] leading-[0.85] mb-8 metallic-text font-black tracking-tighter">
+            ONE OF<br />A KIND.
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-xl mx-auto lg:mx-0 mb-10 font-light leading-relaxed">
-            Experience the legendary 23 flavors fused in a cinematic collision of taste and attitude. Not your average soda.
+          <p className="text-lg md:text-xl text-white/70 max-w-md mx-auto lg:mx-0 mb-10 font-light leading-relaxed">
+            Not your average soda. A complex, fizzy, and undeniably smooth blend of 23 secret flavors designed for those who refuse to settle for boring.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
-            <button className="group relative bg-white text-brand-black px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl">
-              <span className="relative z-10 flex items-center gap-2">
-                Buy Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-              <motion.div 
-                className="absolute inset-0 bg-brand-crimson translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-              />
+            <button className="px-10 py-5 bg-brand-crimson text-white rounded-lg font-black uppercase text-sm hover:scale-105 transition-transform shadow-[0_10px_30px_rgba(226,26,55,0.3)]">
+              Buy Now
             </button>
-            <button className="flex items-center gap-4 text-white font-bold uppercase tracking-widest text-sm hover:text-brand-crimson transition-colors py-4">
-              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group">
-                <Play size={16} fill="currentColor" className="group-hover:scale-110 transition-transform" />
-              </div>
-              Watch Brand Film
+            <button className="px-10 py-5 glass text-white rounded-lg font-bold uppercase text-sm border-white/20 hover:bg-white/5 transition-all">
+              Find Your Flavor
             </button>
           </div>
         </motion.div>
@@ -74,20 +61,30 @@ export const Hero = () => {
           className="relative flex justify-center items-center"
         >
           {/* Decorative Elements */}
-          <div className="absolute inset-0 bg-gradient-radial from-brand-crimson/20 to-transparent blur-3xl rounded-full scale-150 animate-pulse" />
+          <div className="absolute w-[450px] h-[450px] bg-brand-crimson rounded-full filter blur-[120px] opacity-20" />
           
-          {/* Can Placeholder Image */}
-          <div className="relative z-10 w-full max-w-[400px] aspect-[1/2] rounded-[40px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] border border-white/10 group cursor-pointer">
-            <img 
-              src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=2670&auto=format&fit=crop" 
-              alt="Dr Pepper Can" 
-              className="w-full h-full object-cover grayscale-[0.2] contrast-[1.2] group-hover:scale-110 transition-transform duration-1000"
-              referrerPolicy="no-referrer"
-            />
-            {/* Liquid Shine Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-brand-black/90 to-transparent">
-              <span className="text-4xl font-display text-white">ORIGINAL</span>
+          <div className="relative w-[280px] h-[520px] drop-shadow-[0_0_40px_rgba(94,18,29,0.6)] group cursor-pointer">
+            <div className="w-full h-full rounded-[48px] bg-gradient-to-r from-[#3D0A11] via-[#851828] to-[#3D0A11] border-x border-white/10 relative overflow-hidden flex flex-col group-hover:scale-105 transition-transform duration-700">
+              <div className="absolute top-0 w-full h-[60px] bg-gradient-to-b from-black/40 to-transparent"></div>
+              <div className="mt-12 px-8">
+                <div className="text-[14px] font-bold text-white/40 uppercase tracking-[0.3em]">The Original</div>
+                <div className="text-[80px] font-black text-white leading-none mt-4 -ml-2 italic transform -rotate-12 select-none opacity-5">PEPPER</div>
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                 <div className="w-[160px] h-[160px] rounded-full border-4 border-white/10 flex items-center justify-center group-hover:border-brand-crimson/50 transition-colors">
+                   <div className="text-center">
+                     <div className="text-5xl font-black italic">Dr</div>
+                     <div className="text-5xl font-black italic -mt-2">Pepper</div>
+                   </div>
+                 </div>
+              </div>
+              <div className="absolute bottom-12 w-full px-8">
+                 <div className="h-1 w-full bg-white/20 rounded-full mb-2"></div>
+                 <div className="flex justify-between text-[10px] uppercase font-black tracking-widest text-white/50">
+                   <span>Est. 1885</span>
+                   <span>12 FL OZ (355mL)</span>
+                 </div>
+              </div>
             </div>
           </div>
 

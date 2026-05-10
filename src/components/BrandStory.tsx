@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
+import { cn } from '@/src/lib/utils';
 
 const STORY_STEPS = [
   {
@@ -32,7 +33,7 @@ export const BrandStory = () => {
            className="mb-32 text-center"
         >
           <span className="text-brand-crimson font-heading font-bold uppercase tracking-[0.4em] text-sm block mb-4">Our Legacy</span>
-          <h2 className="text-5xl md:text-8xl">ONE OF A <br /> <span className="text-glow underline decoration-brand-crimson/50 underline-offset-8">KIND HISTORY</span></h2>
+          <h2 className="text-6xl md:text-9xl metallic-text">ONE OF <br /> <span className="p-2 border-b-2 border-brand-crimson">A KIND.</span></h2>
         </motion.div>
 
         <div className="space-y-40 md:space-y-64">
@@ -46,31 +47,30 @@ export const BrandStory = () => {
 };
 
 const StoryItem = ({ step, index }: { step: any, index: number }) => {
-  const containerRef = React.useRef(null);
   const isEven = index % 2 === 0;
 
   return (
-    <div ref={containerRef} className={cn(
+    <div className={cn(
       "flex flex-col md:flex-row items-center gap-12 md:gap-24",
       isEven ? "md:flex-row" : "md:flex-row-reverse"
     )}>
       <div className="w-full md:w-1/2">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: isEven ? -5 : 5 }}
-          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative group"
         >
-          <div className="absolute inset-0 bg-brand-crimson/20 translate-x-4 translate-y-4 rounded-3xl -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6" />
+          <div className="absolute inset-0 bg-brand-crimson/10 -rotate-3 rounded-3xl -z-10 transition-transform group-hover:rotate-0" />
           <img 
             src={step.image} 
             alt={step.title}
-            className="w-full aspect-[4/5] object-cover rounded-3xl shadow-2xl grayscale-[0.8] hover:grayscale-0 transition-all duration-1000"
+            className="w-full aspect-[4/5] object-cover rounded-[48px] shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute top-8 left-8">
-            <span className="font-display text-8xl md:text-[10rem] opacity-20 text-white select-none">{step.year}</span>
+          <div className="absolute -top-12 -left-12 opacity-10 select-none">
+            <span className="font-display text-[12rem] text-white">{step.year}</span>
           </div>
         </motion.div>
       </div>
@@ -82,12 +82,16 @@ const StoryItem = ({ step, index }: { step: any, index: number }) => {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="text-4xl md:text-6xl mb-6">{step.title}</h3>
-          <p className="text-xl md:text-2xl text-white/50 font-light leading-relaxed mb-10">
+          <div className="inline-flex items-center gap-3 text-brand-crimson font-bold uppercase tracking-widest text-xs mb-6">
+            <div className="w-8 h-[1px] bg-brand-crimson" />
+            {step.year} Story
+          </div>
+          <h3 className="text-5xl md:text-7xl mb-8 leading-tight">{step.title}</h3>
+          <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed mb-12">
             {step.text}
           </p>
-          <button className="px-8 py-4 rounded-full border border-white/20 hover:border-brand-crimson hover:text-brand-crimson transition-all font-bold uppercase tracking-widest text-xs">
-            Learn More
+          <button className="px-10 py-5 glass text-white rounded-xl font-bold uppercase text-xs tracking-widest border-white/20 hover:bg-white/5 transition-all">
+            Explore Chapter
           </button>
         </motion.div>
       </div>

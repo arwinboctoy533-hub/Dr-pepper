@@ -60,12 +60,12 @@ export const FlavorCarousel = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl mb-4"
+              className="text-6xl md:text-8xl metallic-text"
             >
               FIND YOUR <br />
-              <span className="text-brand-crimson">SIGNATURE</span>
+              <span className="p-2 border-b-2 border-brand-crimson">SIGNATURE.</span>
             </motion.h2>
-            <p className="text-white/40 font-heading tracking-widest uppercase text-sm">Select a flavor to explore its identity</p>
+            <p className="text-white/40 font-heading tracking-widest uppercase text-[10px] mt-6">Select a flavor to explore its identity</p>
           </div>
           
           <div className="flex gap-4">
@@ -139,18 +139,18 @@ export const FlavorCarousel = () => {
                 className="space-y-8"
               >
                 <div>
-                  <span className="text-brand-crimson font-heading font-bold uppercase tracking-widest text-sm mb-4 block">
+                  <span className="text-brand-crimson font-heading font-black uppercase tracking-widest text-[10px] mb-4 block">
                     {activeFlavor.personality}
                   </span>
-                  <h3 className="text-6xl md:text-8xl mb-6">{activeFlavor.name}</h3>
-                  <p className="text-xl text-white/50 leading-relaxed font-light">
+                  <h3 className="text-7xl md:text-9xl mb-6 metallic-text">{activeFlavor.name}</h3>
+                  <p className="text-xl text-white/70 leading-relaxed font-light">
                     {activeFlavor.description}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8 py-8 border-y border-white/10">
+                <div className="grid grid-cols-2 gap-8 py-8 border-y border-white/5">
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest text-white/30 block mb-2">Complexity</span>
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 block mb-2 font-black">Complexity</span>
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
                         <div key={i} className={cn("h-1 flex-1 rounded-full", i < 4 ? "bg-brand-crimson" : "bg-white/10")} />
@@ -158,7 +158,7 @@ export const FlavorCarousel = () => {
                     </div>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest text-white/30 block mb-2">Fizz Level</span>
+                    <span className="text-[10px] uppercase tracking-widest text-white/30 block mb-2 font-black">Fizz Level</span>
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
                         <div key={i} className={cn("h-1 flex-1 rounded-full", i < 3 ? "bg-brand-crimson" : "bg-white/10")} />
@@ -168,11 +168,11 @@ export const FlavorCarousel = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <button className="flex-1 min-w-[200px] bg-brand-crimson hover:bg-brand-red text-white py-5 rounded-full font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all group">
+                  <button className="flex-1 min-w-[200px] bg-brand-crimson hover:bg-brand-red text-white py-5 rounded-xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 transition-all group shadow-[0_10px_30px_rgba(226,26,55,0.2)]">
                     <ShoppingCart size={18} className="group-hover:scale-110" />
                     Add to Cart
                   </button>
-                  <button className="px-8 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-all text-sm font-bold uppercase tracking-widest flex items-center gap-2 group">
+                  <button className="px-8 py-5 rounded-xl glass hover:bg-white/5 transition-all text-[10px] font-black uppercase tracking-widest flex items-center gap-2 group border-white/20">
                     <Info size={18} className="group-hover:rotate-12" />
                     Full Specs
                   </button>

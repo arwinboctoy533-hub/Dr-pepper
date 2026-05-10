@@ -4,10 +4,44 @@ import { Facebook, Twitter, Instagram, Youtube, ArrowUpRight } from 'lucide-reac
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-brand-black pt-32 pb-12 px-6 overflow-hidden border-t border-white/5">
+    <footer className="relative bg-brand-black pt-32 pb-40 px-6 overflow-hidden border-t border-white/5">
       {/* Background Accent */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-crimson/5 blur-[150px] rounded-full translate-x-1/2 translate-y-1/2" />
       
+      {/* Theme Cards from Design */}
+      <div className="relative z-10 max-w-7xl mx-auto mb-32 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="glass rounded-3xl p-6 flex items-center gap-6 group hover:border-brand-crimson/30 transition-all">
+          <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center font-black text-3xl italic group-hover:scale-110 transition-transform">01</div>
+          <div className="flex-1">
+            <div className="text-[10px] uppercase font-black text-brand-crimson tracking-widest mb-1">Limited Drop</div>
+            <div className="text-lg font-bold">Dr Pepper Dark Berry</div>
+            <div className="mt-2 text-[10px] font-mono text-white/40 tracking-widest">ENDS: 14:02:11</div>
+          </div>
+        </div>
+
+        <div className="glass rounded-3xl p-6 flex items-center gap-6 group hover:border-brand-crimson/30 transition-all">
+          <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center font-black text-3xl italic group-hover:scale-110 transition-transform">02</div>
+          <div className="flex-1">
+            <div className="text-[10px] uppercase font-black text-brand-crimson tracking-widest mb-1">Social Buzz</div>
+            <div className="text-lg font-bold">#PepperTok Trending</div>
+            <div className="mt-2 flex -space-x-2">
+              <div className="w-6 h-6 rounded-full bg-brand-crimson border-2 border-brand-black shadow-lg"></div>
+              <div className="w-6 h-6 rounded-full bg-blue-500 border-2 border-brand-black shadow-lg"></div>
+              <div className="w-6 h-6 rounded-full bg-green-500 border-2 border-brand-black shadow-lg"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="glass rounded-3xl p-6 flex flex-col gap-4 group hover:border-brand-crimson/30 transition-all">
+          <div className="text-[10px] uppercase font-black text-white/40 tracking-widest">The Perks</div>
+          <div className="text-lg font-bold -mt-2">Early Access Drops</div>
+          <div className="flex gap-2 items-center">
+            <input type="text" placeholder="Email for early drops" className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs flex-1 focus:outline-none focus:border-brand-crimson transition-colors" />
+            <button className="bg-white text-black text-[10px] font-black uppercase px-6 py-3.5 rounded-xl hover:bg-brand-crimson hover:text-white transition-all">Join</button>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-16 relative z-10">
         <div className="lg:col-span-2 space-y-12">
           <div className="flex items-center gap-2">

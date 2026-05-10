@@ -19,16 +19,16 @@ export const Navbar = () => {
       animate={{ y: 0 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-4",
-        isScrolled ? "bg-brand-black/80 backdrop-blur-xl border-b border-white/10" : "bg-transparent"
+        isScrolled ? "bg-brand-black/40 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Placeholder - Dr Pepper Style */}
-        <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="w-10 h-10 bg-brand-crimson rounded-full flex items-center justify-center font-display text-2xl rotate-[-10deg] group-hover:rotate-0 transition-transform duration-300">
+        <div className="flex items-center gap-3 group cursor-pointer">
+          <div className="w-10 h-10 bg-[#751624] rounded-full flex items-center justify-center font-black text-xl italic rotate-[-10deg] group-hover:rotate-0 transition-transform duration-300">
             DP
           </div>
-          <span className="font-display text-2xl tracking-tight">DR PEPPER</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] font-light text-white/60 hidden sm:block">Originality Since 1885</span>
         </div>
 
         {/* Desktop Nav */}
@@ -37,7 +37,7 @@ export const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-sm font-semibold uppercase tracking-widest text-white/70 hover:text-brand-crimson transition-colors"
+              className="text-[11px] uppercase tracking-[0.2em] font-bold text-white/60 hover:text-brand-crimson transition-colors"
             >
               {item}
             </a>
@@ -46,11 +46,11 @@ export const Navbar = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className="p-2 hover:bg-white/10 rounded-full transition-colors hidden sm:block">
-            <Search size={20} />
+          <button className="hidden sm:block glass px-6 py-2 rounded-full text-[10px] uppercase font-bold tracking-widest hover:bg-white/10 transition-colors">
+            Store Locator
           </button>
           <button className="p-2 hover:bg-white/10 rounded-full transition-colors relative">
-            <ShoppingBag size={20} />
+            <ShoppingBag size={18} />
             <span className="absolute top-0 right-0 w-4 h-4 bg-brand-crimson text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
           </button>
           <button 
@@ -59,7 +59,7 @@ export const Navbar = () => {
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          <button className="hidden md:block bg-brand-crimson hover:bg-brand-red text-white px-6 py-2 rounded-full font-bold uppercase tracking-wider text-sm transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(224,26,34,0.3)]">
+          <button className="hidden md:block bg-brand-crimson hover:bg-brand-red text-white px-6 py-2 rounded-lg font-black uppercase tracking-wider text-[11px] transition-all transform hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(226,26,55,0.3)]">
             Buy Now
           </button>
         </div>
